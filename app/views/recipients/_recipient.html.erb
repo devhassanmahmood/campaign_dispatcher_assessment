@@ -1,0 +1,21 @@
+<tr id="recipient_<%= recipient.id %>" class="hover:bg-gray-50">
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="text-sm font-medium text-gray-900"><%= recipient.name %></div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="text-sm text-gray-500">
+      <%= recipient.email.presence || recipient.phone.presence || "—" %>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
+      <%= case recipient.status
+          when 'queued' then 'bg-gray-100 text-gray-800'
+          when 'sent' then 'bg-green-100 text-green-800'
+          when 'failed' then 'bg-red-100 text-red-800'
+          end %>">
+      <%= recipient.status.capitalize %>
+    </span>
+  </td>
+</tr>
+

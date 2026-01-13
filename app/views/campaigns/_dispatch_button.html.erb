@@ -1,0 +1,6 @@
+<% if campaign.status == "pending" %>
+  <div class="bg-white rounded-lg shadow p-6 mb-6">
+    <%= button_to "Start Dispatch", start_dispatch_campaign_path(campaign), method: :post, class: "px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold" %>
+  </div>
+<% end %>
+
